@@ -52,3 +52,9 @@ Test with very large integers:
 Test with negative float values:
     >>> add_integer(-10.5, -5.5)
     -15
+
+Test with quotations:
+    >>> add_integer(1, "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
