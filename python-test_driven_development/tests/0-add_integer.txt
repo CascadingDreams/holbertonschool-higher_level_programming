@@ -13,7 +13,7 @@ Test with two integers:
 
 Test with a positive and a negative integer:
     >>> add_integer(100, -2)
-    98
+    98 
 
 Test with only one argument (should use default b=98):
     >>> add_integer(2)
