@@ -34,3 +34,9 @@ last name is empty
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
+
+Both empty
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: must be a string
