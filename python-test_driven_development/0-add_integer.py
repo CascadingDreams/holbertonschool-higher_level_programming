@@ -4,14 +4,15 @@ Module for adding integers.
 Adds two integers.
 '''
 
+
 def add_integer(a, b=98):
     '''
     Adds two integers and returns the result.
 
-    Args: 
+    Args:
         a (int or float): first num to add
         b (int or float): second num to add
-    
+
     Returns:
         int: Adding a and b
 
@@ -23,5 +24,11 @@ def add_integer(a, b=98):
 
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+
+    if a == float('inf') or a == -float('inf'):
+        raise OverflowError("Float overflow: cannot convert to integer")
+
+    if b == float('inf') or b == -float('inf'):
+        raise OverflowError("Float overflow: cannot convert to integer")
 
     return int(a) + int(b)
