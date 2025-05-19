@@ -58,3 +58,22 @@ Test with quotations:
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
+
+Float overflow:
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+    ...
+    OverflowError: Float overflow: cannot convert to integer
+
+Test with negative float overflow:
+    >>> add_integer(2, -float('inf'))
+    Traceback (most recent call last):
+    ... 
+    OverflowError: Float overflow: cannot convert to integer
+
+Test with NaN: 
+    >>> add_integer(float('nan'), 2) 
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
