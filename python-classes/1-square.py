@@ -5,6 +5,7 @@ Module initialise square size.
 defines a square by private instance attribute size
 '''
 
+
 class Square:
     '''
     class Square that defines a square.
