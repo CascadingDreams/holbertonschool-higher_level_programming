@@ -1,0 +1,101 @@
+The ``text_indentation`` module
+===============================
+
+Using ``text_indentation``
+-------------------------
+
+Importing function from the module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test basic functionality with all separators:
+    >>> text_indentation("Hello. World? How: are you")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    How:
+    <BLANKLINE>
+    are you
+
+Test with spaces after separators:
+    >>> text_indentation("Hello.   World?     How:     are you")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    How:
+    <BLANKLINE>
+    are you
+
+Test with empty string:
+    >>> text_indentation("")
+
+Test with only separators:
+    >>> text_indentation(".:?")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+Test with string containing only spaces:
+    >>> text_indentation("   ")
+       
+
+Test with separators at the end:
+    >>> text_indentation("Hello world.")
+    Hello world.
+    <BLANKLINE>
+
+Test with no separators:
+    >>> text_indentation("Hello world")
+    Hello world
+
+Test with multiple spaces and separators:
+    >>> text_indentation("Hello.  How are you?  I am fine:  Thanks")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    Thanks
+
+Test with non-string input (integer):
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test with non-string input (None):
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test with non-string input (list):
+    >>> text_indentation(["Hello", "World"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test with no arguments:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test with newlines already in text:
+    >>> text_indentation("Hello.\nWorld?")
+    Hello.
+    <BLANKLINE>
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+
+Test with tabs and spaces:
+    >>> text_indentation("Hello.\t  World")
+    Hello.
+    <BLANKLINE>
+    World
