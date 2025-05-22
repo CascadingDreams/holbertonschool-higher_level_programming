@@ -25,7 +25,8 @@ def text_indentation(text):
         print(char, end='')
 
         if char in separators:
-            print('\n')
+            print()
+            print()
 
             i += 1
             while i < len(text) and text[i] == ' ':

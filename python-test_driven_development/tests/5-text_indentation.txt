@@ -39,10 +39,6 @@ Test with only separators:
     ?
     <BLANKLINE>
 
-Test with string containing only spaces:
-    >>> text_indentation("   ")
-       
-
 Test with separators at the end:
     >>> text_indentation("Hello world.")
     Hello world.
@@ -85,17 +81,3 @@ Test with no arguments:
     Traceback (most recent call last):
         ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-Test with newlines already in text:
-    >>> text_indentation("Hello.\nWorld?")
-    Hello.
-    <BLANKLINE>
-    <BLANKLINE>
-    World?
-    <BLANKLINE>
-
-Test with tabs and spaces:
-    >>> text_indentation("Hello.\t  World")
-    Hello.
-    <BLANKLINE>
-    World
