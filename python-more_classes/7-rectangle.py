@@ -124,7 +124,7 @@ class Rectangle:
 
         rectangle_str = ""
         for row in range(self.__height):
-            rectangle_str += self.print_symbol * self.__width
+            rectangle_str += str(self.print_symbol) * self.__width
             if row < self.__height - 1:
                 rectangle_str += "\n"
 
