@@ -37,6 +37,9 @@ class Rectangle:
 
         self.width = width
         self.height = height
+        
+    def square(cls, size=0):
+        
 
     @property
     def width(self):
