@@ -8,7 +8,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(Rectangle, BaseGeometry):
+class Square(Rectangle):
     '''Creates a square class'''
     def __init__(self, size):
         '''
@@ -22,6 +22,6 @@ class Square(Rectangle, BaseGeometry):
 
         self.__size = size
 
-    def are(self):
+    def area(self):
         '''Calculates are of square'''
         return self.size * self.size
