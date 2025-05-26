@@ -1,0 +1,8 @@
+Test cases for 
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+Import the function from the module:
+    >>> MyList = __import__('7-basegeometry').MyList
