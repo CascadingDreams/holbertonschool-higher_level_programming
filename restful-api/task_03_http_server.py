@@ -10,14 +10,32 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
     '''Creates MyHandler class'''
     def do_GET(self):
         '''handles GET requests'''
-        # Step 1: Tell them "OK, I got your request"
-        self.send_response(200)
-        # Step 2: Tell them what kind of answer I'm giving
-        self.send_header('Content-type', 'text/plain')
-        # Step 3: Say "I'm done with the info, here comes the actual answer"
-        self.end_headers()
-        # Step 4: Give them the actual answer
-        self.wfile.write(b'Hello, this is a simple API!')
+        if self.path == '/':
+            # Handle homepage
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'Hello, this is a simple API!')
+
+        elif self.path == '/data':
+            data = {"name": "John", "age": 30, "city": "New York"}
+            json_data = json.dumps(data)
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json_data.encode())
+
+        elif self.path == '/status':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'OK')
+
+        else:
+            self.send_response(404)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'Endpoint not found')
 
 
 if __name__ == "__main__":
