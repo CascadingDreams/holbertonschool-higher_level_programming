@@ -22,6 +22,6 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     '''starts server'''
-    server = http.server.HTTPServer(('localhost', 5000), MyHandler)
-    print("Server starting on http://localhost:5000")
+    server = http.server.HTTPServer(('localhost', 8000), MyHandler)
+    print("Server starting on http://localhost:8000")
     server.serve_forever()
