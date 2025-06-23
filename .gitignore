@@ -172,3 +172,22 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# VSCode settings
+.vscode/
+
+# Editor swap/backup files
+*.swp
+*~
+*.bak
+
+# Build artifacts
+a.out
+*.out
+*.o
+*.exe
+*.log
+
+# Core dump files
+core
+core.*
