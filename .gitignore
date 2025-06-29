@@ -191,3 +191,4 @@ a.out
 # Core dump files
 core
 core.*
+holberton mysql.session.sql
