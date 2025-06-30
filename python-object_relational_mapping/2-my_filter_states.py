@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     cursor.execute("""
                    SELECT * FROM states
-                   WHERE name = '{}'
+                   WHERE name = BINARY '{}'
                    ORDER BY id ASC
                    """.format(state_name))
 
