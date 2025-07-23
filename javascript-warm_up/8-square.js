@@ -1,5 +1,7 @@
 #!/usr/bin/node
 
+// prints a square
+
 const numberofTimes = process.argv[2];
 const square = 'X';
 
