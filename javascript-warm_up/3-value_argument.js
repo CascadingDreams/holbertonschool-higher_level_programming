@@ -4,10 +4,10 @@
 Prints the first argument passed
 */
 
-const firstArg = process.argv[3];
+const firstArg = process.argv[2];
 
-if (process.argv[3]) {
-    console.log(firstArg);
+if (process.argv[2]) {
+  console.log(firstArg);
 } else {
-    console.log('No argument');
+  console.log('No argument');
 }
