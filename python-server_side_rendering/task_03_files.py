@@ -31,18 +31,13 @@ def items():
 
 @app.route('/products')
 def products():
-    print("=== DEBUG: Products route called ===")
     source = request.args.get('source')
     item_id = request.args.get('id')
-    print(f"DEBUG: source parameter = '{source}'")
-    print(f"DEBUG: item_id parameter = '{item_id}'")
     
     if source not in ['json', 'csv']:
         return render_template('product_display.html',
                                products=[],
                                error_message="Wrong source")
-        
-    print(f"DEBUG: Source validation passed, source = '{source}'")
     
     # if source is json then....     
     if source == 'json':
@@ -51,6 +46,7 @@ def products():
                 data = json.load(f)
                 if isinstance(data, list):
                     products = data
+                    print(f"DEBUG: products:{products}")
                 elif isinstance(data, dict):
                     products = data.get('products', [])
                 else:
@@ -62,16 +58,11 @@ def products():
     
     # if source is csv
     elif source == 'csv':
-        print("DEBUG: Entering CSV branch")
         try:
-            print("DEBUG: Attempting to open product.csv")
-            with open('product.csv', mode='r') as f:
-                print("DEBUG: File opened successfully")
+            with open('products.csv', mode='r') as f:
                 reader = csv.DictReader(f)
-                print("DEBUG: CSV reader created")
                 products = list(reader)
-                print(f"Type of data: {type(products)}")
-                print(f"Data content: {products}")
+                print(f"DEBUG: products:{products}")
         except FileNotFoundError:
             return render_template('product_display.html',
                                    products=[],
@@ -81,6 +72,7 @@ def products():
     if item_id:
         try:
             id_value = int(item_id)
+            print(f"DEBUG: id:{id_value}")
             filtered_products = []
             
             for p in products:
@@ -89,7 +81,6 @@ def products():
                     if product_id == id_value:
                         filtered_products.append(p)
                 except (ValueError, TypeError):
-                    # Skip products with invalid ID values
                     continue
                     
             if not filtered_products:
