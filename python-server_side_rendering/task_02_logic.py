@@ -18,7 +18,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-
 @app.route('/items')
 def items():
     with open ('items.json', 'r') as f:
